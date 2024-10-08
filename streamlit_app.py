@@ -35,7 +35,8 @@ if ingredient_list:
     ingredients_string = ""
     for fruit_choosen in ingredient_list:
         ingredients_string += fruit_choosen + " "
-        fruityvice_response = requests.get("https://www.themealdb.com/api/json/v1/1/search.php?s=apple")
+        st.subheader(fruit_choosen + "Nutrition Information")
+        fruityvice_response = requests.get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + fruit_choosen)
         fv_df = st.dataframe(fruityvice_response.json(), use_container_width=True)
         
 
