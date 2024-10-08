@@ -46,6 +46,8 @@ if ingredient_list:
             st.success('Your Smoothie is ordered!', icon="✅")
 
 fruityvice_response = requests.get("https://www.themealdb.com/api/json/v1/1/search.php?s=apple")
-st.text(fruityvice_response.json())
+# st.text(fruityvice_response.json())
+fv_df = st.dataframe(fruityvice_response.json(), use_container_width=True)
+
 
  
