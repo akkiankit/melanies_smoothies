@@ -4,8 +4,7 @@ import streamlit as st
 from snowflake.snowpark.functions import col
 
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response)
+# fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 
 # Write directly to the app
 st.title(":cup_with_straw: Custom Smoothie Order Form :cup_with_straw:")
@@ -45,5 +44,8 @@ if ingredient_list:
         if ingredients_string:
             session.sql(my_insert_stmt).collect()
             st.success('Your Smoothie is ordered!', icon="✅")
+
+fruityvice_response = requests.get("https://www.themealdb.com/api/json/v1/1/search.php?s=apple")
+st.text(fruityvice_response)
 
  
